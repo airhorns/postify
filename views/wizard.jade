@@ -1,0 +1,30 @@
+h1 Welcome to Postify!
+p 
+  | In order to finish setting up Postify with
+  b= shop.shopUrl
+  | , Postify needs a couple things from you:
+
+form#postify_info(method="post", action="/prefs")
+  #posterous_setup
+
+    h2 We need your Posterous information.
+
+    p We need the email you used to sign up to Posterous with and your Posterous password so we can submit posts on your behalf.
+    | This information will never be given to anyone, ever.
+    #posterous_info
+      input(id="email", name="email", type="text", placeholder="Email for Posterous")
+      input(id="password", name="password", type="password", placeholder="Posterous Password")
+      input(id="shop_id", name="shop", type="hidden", value="#{shop.shopUrl}")
+      
+      button#test_credentials Go
+
+  div.sitepicker(style="display:none;") 
+    h2 Next, pick which Posterous site you'd like to post updates to:
+    select(id="sitepicker", name="posterous_site_id")
+    button#select_site This one
+
+  div.post_template(style="display:none;")
+    h2 Next, tell us what you want your Posterous Posts to look like.
+    != partial('_post_template_form')
+
+img#spinner(src="/images/spinner.gif", style="display:none;")

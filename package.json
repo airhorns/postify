@@ -1,0 +1,31 @@
+{
+  "name": "Postify",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "express": "2.4.2",
+    "jade": ">= 0.0.1",
+    "node-shopify": ">= 0.0.1",
+    "mongoose": "~>1.6.0",
+    "request": "~>1.9.8",
+    "restler": "~>0.2.1"
+  },
+  "devDependencies": {
+    "muffin": ">= 0.0.1"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "author": "Harry Brundage <harry.brundage@jadedpixel.com> (http://harry.me/)",
+  "description": "A handy Shopify product update aggregator, sending fun updates to Posterous",
+  "homepage": "http://apps.shopify.com/postify",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hornairs/postify.git"
+  },
+  "scripts": {
+    "build": "cake build",
+    "test": "cake test",
+    "serve": "node app.js"
+  }
+}

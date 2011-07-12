@@ -1,0 +1,38 @@
+div.form_inputs
+  p
+    label(for="post_title_template") Post Title Template
+    br
+    input(id="post_title_template", name="post_title_template", type="text", placeholder="Enter a Liquid template here")
+    br
+    a(href="#", id="default_title_template", class="small") Use default
+  p
+    label(for="post_body_template") Post Body Template
+    br
+    textarea(id="post_body_template", name="post_body_template", type="text", placeholder="Enter another Liquid template here")
+    br
+    a(href="#", id="default_body_template", class="small") Use default
+  p
+    label(for="post_tags") Post Tags
+    br
+    input(id="post_tags", name="post_tags", placeholder="Comma separated post tags", type="text")
+  p
+    input(id="aggregate_images", name="aggregate_images", type="checkbox")
+    label(for="aggregate_images") Aggregate Product Images to Posterous Gallery?
+    p.small This means that the Product Images in Shopify will be pulled in to a Gallery for your Posterous Post.
+
+div.form_info
+  | For the <tt>Post Title Template</tt> and the <tt>Post Body Template</tt>, you can use 
+  a(href="http://www.liquidmarkup.org/") Liquid
+  |  templates for building the title and body of your posts. 
+  br
+  | The templates will have access
+  | to the variables <tt>product</tt> and <tt>shop</tt> which will reflect all the properties
+  | of those two objects as defined in the
+  a(href="http://api.shopify.com/") Shopify Api.
+  |  Find the reference for the Product object 
+  a(href="http://api.shopify.com/product.html") here
+  |  and the reference for the Shop object
+  a(href="http://api.shopify.com/order.html") here.
+
+div.clear
+input(type="submit" value="Start Posting!")

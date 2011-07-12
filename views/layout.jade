@@ -1,0 +1,21 @@
+!!!
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript', src='http://code.jquery.com/jquery-1.6.2.min.js')
+    script(type='text/javascript', src='/javascripts/application.js')
+  body
+    .error.message(style="display: none;")
+      h3 Ups, an error ocurred
+      p This is just an error notification message.
+    .success.message(style="display: none;")
+      h3 Congrats, you did it!
+      p This is just a success notification message.
+    - if(typeof flashSuccess !== "undefined")
+      script
+        showMessage('success', "#{flashSuccess.title}", "#{flashSuccess.body}");
+    - if(typeof flashError !== "undefined")
+      script
+        showMessage('error', "#{flashError.title}", "#{flashError.body}");
+    != body
